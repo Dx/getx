@@ -8,12 +8,20 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
+    // on this method, the view is not ready, just the context
     super.onInit();
     print("same as initState");
   }
 
+  @override
+  void onReady() {
+    // on this method, the view is ready and accessible
+    super.onReady();
+    print("on Ready");
+  }
+
   void increment() {
     this._counter++;
-    update();
+    update(['text']);
   }
 }
