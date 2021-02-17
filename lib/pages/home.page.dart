@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:getx_demo/controllers/home_controller.dart';
+import 'package:getx_demo/pages/home_page_widgets/home_list.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      init: HomeController(),
-      builder: (_) {
-        print("build home");
-        return Scaffold(
-          body: Center(
-            child: GetBuilder<HomeController>(
-              id: "text",
-              builder: (_)=>Text(_.counter.toString())
+        init: HomeController(),
+        builder: (_) {
+          print("build home");
+          return Scaffold(
+            body: Homelist(),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                _.increment();
+              },
+              child: Icon(Icons.add),
             ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              _.increment();
-            },
-            child: Icon(Icons.add),
-          ),
-        );
-      }
-    );
+          );
+        });
   }
 }
