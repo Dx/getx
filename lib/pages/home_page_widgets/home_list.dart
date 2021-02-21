@@ -9,6 +9,9 @@ class Homelist extends StatelessWidget {
     return GetBuilder<HomeController>(
         id: 'users',
         builder: (_) {
+          if (_.loading) {
+            return Center(child: LinearProgressIndicator());
+          }
           return ListView.builder(
             itemBuilder: (context, index) {
               final User user = _.users[index];

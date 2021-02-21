@@ -6,9 +6,11 @@ import 'package:getx_demo/models/user.dart';
 class HomeController extends GetxController {
   int _counter = 0;
   List<User> _users = [];
+  bool _loading = true;
 
   int get counter => _counter;
   List<User> get users => _users;
+  bool get loading => _loading;
 
   @override
   void onInit() {
@@ -28,6 +30,7 @@ class HomeController extends GetxController {
   Future<void> loadUsers() async {
     final data = await UsersAPI.instance.getUsers(1);
     this._users = data;
+    this._loading = false;
 
     update(['users']);
   }
