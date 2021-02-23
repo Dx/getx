@@ -16,7 +16,9 @@ class Homelist extends StatelessWidget {
             itemBuilder: (context, index) {
               final User user = _.users[index];
               return ListTile(
-                  title: Text(user.firstName), subtitle: Text(user.email));
+                  onTap: () => _.showUserProfile(user),
+                  title: Text(user.firstName),
+                  subtitle: Text(user.email));
             },
             itemCount: _.users.length,
           );
