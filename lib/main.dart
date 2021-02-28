@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_demo/controllers/global_controller.dart';
 import 'package:getx_demo/pages/splash_page.dart';
-import 'package:get/get.dart';
 //import 'package:get/route_manager.dart';
 import 'package:get/get.dart';
 

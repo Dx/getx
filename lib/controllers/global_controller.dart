@@ -9,13 +9,12 @@ class GlobalController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
 
     _loadProducts();
   }
 
-  _loadProducts() async {
+  Future<void> _loadProducts() async {
     final String productsString =
         await rootBundle.loadString('assets/products.json');
 
@@ -24,6 +23,12 @@ class GlobalController extends GetxController {
         .toList();
 
     print("global on init");
+    update(['products']);
+  }
+
+  onFavorite(int index, bool isFavorite) {
+    Product product = this._products[index];
+    product.isFavorite = isFavorite;
     update(['products']);
   }
 }

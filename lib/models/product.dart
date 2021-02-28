@@ -4,6 +4,7 @@ class Product {
   final int id;
   final String name, description;
   final double price, rate;
+  bool isFavorite = false;
 
   Product(
       {@required this.id,

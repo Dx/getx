@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:getx_demo/controllers/home_controller.dart';
-import 'package:getx_demo/pages/home_page_widgets/home_list.dart';
+// import 'package:getx_demo/pages/home_page_widgets/home_list.dart';
+import 'package:getx_demo/widgets/product_list.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
         init: HomeController(),
         builder: (_) {
           return Scaffold(
-            body: Homelist(),
+            body: ProductList(),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
                 _.increment();
